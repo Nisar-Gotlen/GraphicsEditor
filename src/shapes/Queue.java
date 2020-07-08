@@ -14,21 +14,13 @@ import java.util.ArrayList;
  * @author user
  */
 public class Queue {
-    ArrayList<Shape> queue = new ArrayList<>();
+    ArrayList<Shape> queue;
     Color currentColor;
-    private static Queue q;
     
-    private Queue(){
+    public Queue(){
         queue = new ArrayList<>();
         currentColor = Color.BLACK;
-    }
-    
-    public static Queue singleton(){
-        if(q == null){
-            q = new Queue();
-            q.addShape(new PolyLine());
-        }
-        return q;
+        queue.add(new PolyLine());
     }
 
     public int getSize() {

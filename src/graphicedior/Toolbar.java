@@ -28,8 +28,8 @@ public class Toolbar extends JToolBar {
         this.add(new EllipseButton(queue));
         this.add(new PoligonButton(queue));
         this.add(new SavePNGButton(canvas));
-        this.add(new SaveButton());
-        this.add(new LoadButton(canvas));
+        this.add(new SaveButton(queue));
+        this.add(new LoadButton(canvas, queue));
         this.add(new ClearButton(queue, canvas));
         this.add(new ColorBar(queue, frame));
 

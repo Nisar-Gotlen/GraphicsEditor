@@ -21,7 +21,7 @@ public class Window extends JFrame {
 
   private final EditorCanvas canvas;
   private final JFrame frame = this;
-  private final Queue queue = Queue.singleton();
+  private final Queue queue = new Queue();
   private final int toolbarHeigh = 50;
   private final int frameWidth = 1500;
   private final int frameHeight = 1000;

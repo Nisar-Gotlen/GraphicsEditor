@@ -10,6 +10,7 @@ import graphicedior.EditorCanvas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import shapes.Queue;
 
 /**
  *
@@ -19,13 +20,13 @@ public class LoadButton extends Button {
 
     private static final long serialVersionUID = 1L;
 
-    public LoadButton(EditorCanvas canvas) {
+    public LoadButton(EditorCanvas canvas, Queue queue) {
         super("Load");
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new Loader(canvas);
+                    new Loader(canvas, queue);
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }

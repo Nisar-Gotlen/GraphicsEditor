@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class Loader {
-    public Loader(EditorCanvas canvas) throws IOException {
+    public Loader(EditorCanvas canvas, Queue queue) throws IOException {
         SaveShapeQueue shapes = new SaveShapeQueue();
         FileInputStream fileInputStream = new FileInputStream("save.ser");
         try (ObjectInputStream stream = new ObjectInputStream(fileInputStream)) {
@@ -18,7 +18,6 @@ public class Loader {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-            Queue queue = Queue.singleton();
             for (SaveShape saveShape : shapes.getShapes()) {
                 queue.setCurrentColor(saveShape.getColor());
                 if (saveShape.getType().equals("Ellipse")) {

@@ -9,6 +9,7 @@ import Save.Saver;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import shapes.Queue;
 
 /**
  *
@@ -18,13 +19,13 @@ public class SaveButton extends Button {
 
     private static final long serialVersionUID = 1L;
 
-    public SaveButton() {
+    public SaveButton(Queue queue) {
         super("Save");
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new Saver();
+                    new Saver(queue);
                 } catch (IOException ioException) {
 
                     ioException.printStackTrace();

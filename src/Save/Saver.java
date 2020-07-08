@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class Saver{
-    public Saver() throws IOException {
+    public Saver(Queue queue) throws IOException {
         SaveShapeQueue Queueshape = new SaveShapeQueue();
-        for(Shape shape: Queue.singleton().getQueue()) {
+        for(Shape shape: queue.getQueue()) {
             Queueshape.addShape(new SaveShape(shape));
         }
         FileOutputStream outputStream = new FileOutputStream("save.ser");
